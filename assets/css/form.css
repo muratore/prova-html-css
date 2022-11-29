@@ -1,28 +1,14 @@
-*{
-  font-family: 'Roboto', sans-serif;
+form{
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-
-h1{
-text-align: center;
-font-size: 40px;
-}
-section.cadastro{
-width: 600px;
-margin: auto;
-border: 1px solid;
-border: none;
-
-
-
-}
 fieldset{
 display: flex;
 flex-direction: column;
-width: 500px;
 margin: auto;
-border: none;;
-
+border: none;
 }
 
 input, select{
@@ -37,34 +23,33 @@ label{
 
 .dados{
   margin-top: 4px;
-  
 }
 
 .text{
   margin-top: 4px;
-  margin-left: 100px;
-  text-align: center;
   border: none ;
-
-
 }
 
-.butao{
-  text-align: center;
-  margin: 4px;
-  font-weight: bolder;
-
+.btn-container{
+  display: flex;
+  justify-content: space-between;
 }
-.butao-reset{
-  margin: 4px;
-  text-align: center;
 
-}
 
 #submit, #reset{
-  width: 400px;
-  padding: 6px;
+  padding: 15px 50px ;
   border-radius: 4px;
   border: none;
-  background: #f8f3f3;
+}
+
+#submit{
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+textarea{
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
 }

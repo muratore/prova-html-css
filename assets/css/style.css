@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body{
@@ -9,8 +10,12 @@ html, body{
   font-family: 'Roboto', sans-serif;
 
 }
+/* variaveis globais */
+:root {
+  --main-color: #1abc9c;
+  --white: #fff;
 
-
+}
 .wrap-nav{
   display: flex;
   width: 100%;
@@ -21,7 +26,8 @@ html, body{
 .base{
   width: 100%;
   max-width: 1300px;
-  min-height: 600px;
+  padding: 0 3%;
+
   margin: 0 auto;
 
 }
@@ -36,24 +42,29 @@ html, body{
   /* background-color: yellow; */
   justify-content: space-between;
 }
+.nav-container nav{
+  display: flex;
+  align-items: center;
+}
 nav ul{
   display: flex;
+  padding: 1rem 0;
   gap: 3rem;
+ 
+  
 }
 
 nav ul li{
-  
   list-style: none;
-  text-transform: capitalize; 
-  
-
+  padding: 1rem 0;
+  text-transform: capitalize;
 }
+
 .logo{
   font-size: 3rem;
   font-weight: 700;
   color: white;
   text-transform: uppercase;
-
 }
 
 nav ul li a{
@@ -64,23 +75,26 @@ nav ul li a{
   
 }
 
-
-
 .apresentacao{
   display: flex;
-  padding: 50px;
+  padding: 5%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 3rem;
   font-weight: 700;
-  background-color: #1abc9c;
+  background-color: var(--main-color);
   color: white;
 }
 
 .apresentacao h3{
  font-size: 2rem;
+ font-weight: 300;
+ letter-spacing: .3rem;
+ padding: 1rem 0;
+ border-top: .1rem dotted var(--white);
+ border-bottom: .1rem dotted var(--white);
 }
 .foto-pessoal{
   margin-top: 2rem;
@@ -93,7 +107,6 @@ nav ul li a{
 
 }
 h1{
-  height: 50px;
   padding: 50px 0;
 }
 
@@ -126,7 +139,8 @@ h1{
 }
 
 .sobre-container{
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   text-align: center;
   margin: 0 auto;
   /* background-color: yellow; */
@@ -146,4 +160,51 @@ h1{
    text-align: center;
    padding: 20px;
    margin-top: 50px;
+ }
+
+ #contato{
+  padding: 0 10%;
+ }
+
+/* menu hamburguer */
+.hamburguer{
+  color: var(--white);
+  /* background-color: red; */
+  display: none;
+  cursor: pointer;
+}
+
+
+.menu-mobile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(3, 0, 0);
+  opacity: .8;
+  top: 120px;
+  left: 0;
+  
+}
+
+
+ @media all and (max-width: 960px) {
+  *{
+    font-size: 100%;
+  }
+  nav ul{
+    display: none;
+  }
+  .hamburguer{
+    display: flex;
+  }
+  .menu-mobile li{
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid var(--white);
+  }
+
  }
