@@ -1,13 +1,15 @@
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 html, body{
   width: 100%;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  
 
 }
 /* variaveis globais */
@@ -16,6 +18,8 @@ html, body{
   --white: #fff;
 
 }
+
+/* HEADER */
 .wrap-nav{
   display: flex;
   width: 100%;
@@ -23,41 +27,43 @@ html, body{
   background-color: rgb(13, 13, 30);
 }
 
+.mask-menu{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(13, 13, 30);
+  z-index: 10;
+}
+nav{
+  z-index: 11;
+}
+
 .base{
   width: 100%;
   max-width: 1300px;
   padding: 0 3%;
-
   margin: 0 auto;
-
 }
+
 .nav-container{
   display: flex;
   margin: 0 auto;
   width: 100%;
   max-width: 1300px;
-  position: relative;
   height: 120px;
   align-items: center;
-  /* background-color: yellow; */
   justify-content: space-between;
-}
-.nav-container nav{
-  display: flex;
-  align-items: center;
-}
-nav ul{
-  display: flex;
-  padding: 1rem 0;
-  gap: 3rem;
- 
-  
 }
 
 nav ul li{
+  color: var(--white);
+  cursor: pointer;
+  text-transform: uppercase;
   list-style: none;
-  padding: 1rem 0;
-  text-transform: capitalize;
+  font-size: 1.2rem;
 }
 
 .logo{
@@ -65,14 +71,7 @@ nav ul li{
   font-weight: 700;
   color: white;
   text-transform: uppercase;
-}
-
-nav ul li a{
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  
+  z-index: 11;
 }
 
 .apresentacao{
@@ -121,9 +120,22 @@ h1{
 .wrap-section h2{
   margin: 100px 0 30px 0;
   border-bottom: 1px dashed gray;
-  /* background-color: blueviolet; */
 }
 
+/* SECTIONS */
+
+h2 > span {
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+#portifolio, #contato, #sobre{
+  padding-top: 1rem;
+} 
+
+/* FIM SECTIONS */
+
+/* SECTION PORTIFOLIO */
 .port-fotos{
   justify-content: center;
   display: flex;
@@ -151,7 +163,6 @@ h1{
  margin: 50px 0 30px 0;
 }
 
-
 .sobre-container p{
   line-height: 1.7rem;
  }
@@ -174,37 +185,51 @@ h1{
   cursor: pointer;
 }
 
-
-.menu-mobile{
+ul{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+  transition: all .5s;
+}
+ul.mobile{
   width: 100%;
   flex-direction: column;
   position: absolute;
-  background-color: rgb(3, 0, 0);
-  opacity: .8;
+  background-color: rgb(13, 13, 30);
   top: 120px;
+  z-index: 7;
   left: 0;
-  
 }
-
 
  @media all and (max-width: 960px) {
   *{
     font-size: 100%;
   }
-  nav ul{
-    display: none;
-  }
-  .hamburguer{
+  .logo, .hamburguer{
     display: flex;
+    z-index: 11;
   }
-  .menu-mobile li{
+  nav{
+    z-index: 9;
+  }
+  
+  ul{
+    display: flex;
     text-align: center;
+    flex-direction: column;
     width: 100%;
-    border-bottom: 1px solid var(--white);
+    position: absolute;
+    top: -230px;
+    left: 0;
   }
+  ul li{
+    border-bottom: 1px solid var(--main-color);
+    width: 100%;
+    padding: 0 2rem;
+  }
+
 
  }
